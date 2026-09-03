@@ -1,0 +1,59 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>
+      {% block title %}
+       Mural de Recados
+      {% endblock %}
+    </title>
+
+    <link rel="stylesheet" href="{% static 'pages/style.css' %}" />
+  </head>
+
+  <body>
+    <header class="cabecalho">
+      <div class="container cabecalho-conteudo">
+        <a href="{% url 'pages:index' %}" class="logo">Mural de Recados</a>
+
+        <nav aria-label="Navegação principal">
+          <ul class="menu">
+            <li>
+              <a href="{% url 'pages:index' %}">Início</a>
+            </li>
+
+            <li>
+              <a href="{% url 'pages:mensagens' %}">Mensagem</a>
+            </li>
+
+            
+            <li>
+              <a href="{% url 'pages:lista' %}">Mensagens de usuarios</a>
+            </li>
+
+
+
+          
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      {% block content %}
+
+      {% endblock %}
+    </main>
+
+    <footer class="rodape">
+     
+        <p> Mural de Recados</p>
+      </div>
+    </footer>
+  </body>
+</html>

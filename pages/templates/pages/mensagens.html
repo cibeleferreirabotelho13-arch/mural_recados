@@ -1,0 +1,137 @@
+{% extends 'pages/base.html' %}
+
+{% block title %}
+    Mensagem | Mural de Recados
+{% endblock %}
+
+{% block content %}
+
+<section class="pagina-mensagens">
+
+    <div class="recado">
+        <p>
+            Um pequeno recado pode fazer uma grande diferença
+        </p>
+
+        <h1>
+            Deixe sua mensagem aqui
+        </h1>
+    </div>
+
+    <div class="card-mensagem">
+
+        {% if mensagem_enviada %}
+
+            <div class="confirmacao-mensagem">
+
+                <span class="icone-sucesso">
+                    ✓
+                </span>
+
+                <h2>
+                    Mensagem recebida
+                </h2>
+
+                <p>
+                    Confira as informações enviadas:
+                </p>
+
+                <div class="nome-mensagem">
+
+                    <div class="nome-item">
+                        <span>Nome</span>
+                        <strong>{{ mensagem.nome }}</strong>
+                    </div>
+
+                    <div class="data-item">
+                        <span>Data</span>
+                        <strong>{{ mensagem.data }}</strong>
+                    </div>
+
+                    <div class="mensagem-item">
+                        <span>Mensagem</span>
+                        <strong>{{ mensagem.mensagem }}</strong>
+                    </div>
+
+                </div>
+
+                <a
+                    href="{% url 'pages:mensagens' %}"
+                    class="botao botao-principal"
+                >
+                    Mandar outra mensagem
+                </a>
+
+            </div>
+
+        {% else %}
+        
+        <form method="post">
+            
+            {% csrf_token %}
+            
+            <div class="formulario">
+              <p>
+                  Preencha as informações abaixo.
+              </p>
+          </div>
+                
+
+                <div class="mensagens">
+
+                    <label for="nome">
+                        Seu nome
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nome"
+                        name="nome"
+                    >
+
+                </div>
+
+                <div class="mensagens">
+
+                    <label for="data">
+                        Data
+                    </label>
+
+                    <input
+                        type="date"
+                        id="data"
+                        name="data"
+                    >
+
+                </div>
+
+                <div class="mensagens">
+
+                    <label for="mensagem">
+                        Mensagem
+                    </label>
+
+                    <input
+                        type="text"
+                        id="mensagem"
+                        name="mensagem"
+                    >
+
+                </div>
+
+                <button
+                    type="submit"
+                    class="botao botao-principal botao-mensagem"
+                >
+                    Compartilhar Mensagem
+                </button>
+
+            </form>
+
+        {% endif %}
+
+    </div>
+
+</section>
+
+{% endblock %}

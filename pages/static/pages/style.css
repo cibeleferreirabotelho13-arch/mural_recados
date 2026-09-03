@@ -1,0 +1,224 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    background-image: url(https://img.magnific.com/vetores-gratis/desenho-de-colagem-desenhada-a-mao_23-2149543519.jpg?semt=ais_hybrid&w=740&q=80);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    line-height: 1.5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+button {
+    border: 2px;
+}
+
+.container {
+    width: min(100% - 32px, var(--largura-container));
+    margin-inline: auto;
+}
+
+
+/* BOTÕES */
+
+.botao {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 46px;
+    padding: 11px 20px;
+
+    font-weight: 700;
+    line-height: 1.2;
+
+    text-align: center;
+    text-decoration: none;
+}
+
+.botao:hover {
+    transform: translateY(-1px);
+}
+
+.botao-principal {
+    background-color: #a8f0c5;
+    color: #1b3622;
+}
+
+.botao-principal:hover {
+    background-color: #daf5df;
+}
+
+
+/* CABEÇALHO */
+
+.cabecalho {
+    background-color: #e8f5da;
+    border-bottom: 3px double #686b51;
+}
+
+.cabecalho-conteudo {
+    min-height: 50px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.logo {
+    flex-shrink: 0;
+    color: #686b51;
+
+    font-size: 1.7rem;
+    font-weight: 600;
+
+    text-decoration: double;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    background-color: #f2edc7;
+    border: double;
+    gap: 30px;
+
+    margin: 10px;
+    padding: 10px;
+}
+
+.menu li {
+    display: flex;
+    align-items: center;
+}
+
+.menu a,
+.menu span {
+    color: #686b51;
+
+    font-weight: 400;
+    text-decoration: overline;
+}
+
+.menu a:hover {
+    color: #1c3017;
+}
+
+p {
+    color: #686b51;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    
+}
+
+h1 {
+    color: #686b51;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+     font-size: 3rem;
+    
+}
+.container2 {
+    color: #686b51;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+     font-size: 3rem;
+}
+
+/* PÁGINA DE MENSAGENS */
+
+.pagina-mensagens {
+    min-height: calc(100vh - 150px);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 40px 16px;
+}
+
+.card-mensagem {
+    width: 100%;
+    max-width: 600px;
+
+    margin: 0 auto;
+
+    display: block;
+
+    text-align: center;
+}
+
+.card-mensagem form {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.card-mensagem form > p {
+    width: 100%;
+    margin: 0 0 20px;
+
+    text-align: center;
+}
+
+.mensagens {
+    width: 100%;
+
+    margin-bottom: 20px;
+
+    text-align: left;
+}
+
+.mensagens label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.mensagens input {
+    display: block;
+
+    width: 100%;
+    min-height: 45px;
+
+    padding: 8px;
+
+    background-color: #e8f5da;
+
+    border: 1px solid #686b51;
+    border-radius: 5px;
+}
+
+
+.rodape {
+     background-color: #e8f5da;
+     border: double;
+     margin-top: auto;
+    padding: 0;
+    text-align: center;
+    
+}
