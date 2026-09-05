@@ -1,60 +1,55 @@
 {% extends 'pages/base.html' %}
 
 {% block title %}
-  Mensagens de usuarios | Mural de Recados
+    Mensagens de usuários | Mural de Recados
 {% endblock %}
 
 {% block content %}
-  <section class="pagina-lista">
-    <div class="container">
-      <div class="lista-cabecalho">
-        <span class="etiqueta">Catálogo</span>
 
-        <h1>Encontre sua próxima leitura</h1>
+<div class="pagina-mensagens">
 
-        <p>Pesquise pelos livros disponíveis na Estante Circular.</p>
-      </div>
+    <h2 class="titulo-mensagens">
+        Mensagens de usuários
+    </h2>
 
-      <form method="get" class="formulario-busca">
-        <label for="busca" class="sr-only">Pesquisar livro</label>
+    <section>
+        <h2>
+            Veja as mensagens dos usuários
+        </h2>
 
-        <input type="text" id="busca" name="busca" value="{{ termo_busca }}" placeholder="Digite o nome do livro" />
+        <div class="nossas-mensagens">
 
-        <button type="submit" class="botao botao-principal">Pesquisar</button>
-      </form>
+            {% for mensagem in mensagens %}
 
-      {% if pesquisa_realizada %}
-        <div class="resultado-pesquisa">
-          <p>
-            Resultado da pesquisa por:
-            <strong>{{ termo_busca }}</strong>
-          </p>
+                <article class="article-mensagem">
+
+                    <div class="card-mensagem-conteudo">
+
+                        <span class="nome">
+                            {{ mensagem.nome }}
+                        </span>
+
+                        <span class="data-mensagem">
+                            {{ mensagem.data }}
+                        </span>
+
+                        <p class="texto-mensagem">
+                            {{ mensagem.mensagem }}
+                        </p>
+
+                    </div>
+
+                </article>
+
+            {% empty %}
+
+                <p>Nenhuma mensagem encontrada.</p>
+
+            {% endfor %}
+
         </div>
-      {% endif %}
+    </section>
 
-      {% if mensagens %}
-        <div class="grade-livros">
-          {% for mensagem in mensagens %}
-            <article class="card-livro">
-              <div class="capa-livro">📖</div>
+</div>
 
-              <div class="card-livro-conteudo">
-                <span class="genero">{{ mensagem.nome }}</span>
-
-                <h2>{{ mensagem.data }}</h2>
-
-                <p>{{ mensagem.mensagem }}</p>
-              </div>
-            </article>
-          {% endfor %}
-        </div>
-      {% else %}
-        <div class="nenhum-resultado">
-          <h2>Nenhum recado encontrado</h2>
-
-          <p>Não encontramos recados com o termo informado.</p>
-        </div>
-      {% endif %}
-    </div>
-  </section>
 {% endblock %}

@@ -26,23 +26,67 @@
             <li>
               <a href="{% url 'pages:index' %}">Início</a>
             </li>
+               
+            {% if not request.user.is_authenticated %}
 
             <li>
-              <a href="{% url 'pages:mensagens' %}">Mensagem</a>
+              <a href="{% url 'pages:login' %}">Login</a>
             </li>
+             {% else %}
+               
+             
+             <li>
+               <a href="{% url 'pages:mensagens' %}">Mensagem</a>
+              </li>
+              
+              
+              
+              
+              {% endif %}
+              {% if not request.user.is_authenticated %}
+              
+              <li>
+                <a href="{% url 'pages:cadastro' %}">Cadastro</a>
+              </li>
+              {% endif %}
+              
+              <li>
+                <a href="{% url 'pages:lista' %}">Mensagens de usuarios</a>
+              </li>
 
-            
-            <li>
-              <a href="{% url 'pages:lista' %}">Mensagens de usuarios</a>
-            </li>
+               <li>
+                <a href="{% url 'pages:meus_recados' %}">Minhas Mensagens</a>
+              </li>
+              
+              <span>
+                {% if user.first_name %}
+                Olá, {{ user.first_name }}
+                {% else %}
+                Olá, {{ user.username }}
+                {% endif %}
+              </span>
 
-
-
-          
+              <li>
+                <a href="{% url 'pages:logout' %}" class="botao-menu">Sair</a>
+              </li>
+               
+               
           </ul>
         </nav>
       </div>
     </header>
+
+     {% if messages %}
+      <div class="mensagens-sistema">
+        <div class="container">
+          {% for message in messages %}
+            <div class="mensagem-sistema {{ message.tags }}" role="alert">
+              <span>{{ message }}</span>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    {% endif %}
 
     <main>
       {% block content %}

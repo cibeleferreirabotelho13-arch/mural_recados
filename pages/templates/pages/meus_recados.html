@@ -1,0 +1,106 @@
+{% extends 'pages/base.html' %}
+
+
+{% block title %}
+    Meus Recados | Mural de Recados
+{% endblock %}
+
+
+{% block content %}
+
+<section class="guia-meus-recados">
+
+    <div class="container">
+
+        <div class="meus--cabecalho">
+
+            <div>
+
+                <h1>
+                    Meus recados
+                </h1>
+
+                <p>
+                    Veja os recados que voê enviou para o mural de recados.
+                </p>
+
+            </div>
+
+
+            <a
+                href="{% url 'pages:mensagens' %}"
+                class="botao botao-principal"
+            >
+                Enviar outra mensagem
+            </a>
+
+        </div>
+
+
+        {% if recados %}
+
+            <div class="grade-meus-recados">
+
+                {% for recado in recados %}
+
+                    <article class="card-meu-livro">
+
+                        <div class="meu-livro-cabecalho">
+
+                            <div>
+
+                                <span class="nome-usuario">
+                                    {{ mensagem.nome }}   
+                                </span>
+
+                                <h2>
+                                    {{ mensagem.data }}
+                                </h2>
+
+                                <p>
+                                    {{ mensagem.mensagem }}
+                                </p>
+
+                            </div>
+
+
+                        </div>
+
+                        </div>
+
+                    </article>
+
+                {% endfor %}
+
+            </div>
+
+        {% else %}
+
+            <div class="nenhum-resultado">
+
+                <h2>
+                    Nenhuma mensagem encontrada
+                </h2>
+
+                <p>
+                    Você ainda não possui mensagens
+                    enviadas para o mural de recados.
+                </p>
+
+
+                <a
+                    href="{% url 'pages:mensagens' %}"
+                    class="botao botao-principal"
+                >
+                    Enviar mensagem
+                </a>
+
+            </div>
+
+        {% endif %}
+
+    </div>
+
+</section>
+
+{% endblock %}

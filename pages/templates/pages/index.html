@@ -1,59 +1,67 @@
 {% extends 'pages/base.html' %}
 
-
 {% block title %}
-    Início | Mural de recados
+    Início | Mural de Recados
 {% endblock %}
-
 
 {% block content %}
 
-<section>
+<section class="pagina-inicio">
+
     <div class="recado">
+
         <p>
-            Olá! Seja bem vindo ao Mural de Recados.
-
+            Olá! Seja bem-vindo ao Mural de Recados.
         </p>
+
         <h1>
-            Tem algo para dizer? 
+            Tem algo para dizer?
         </h1>
 
         <h1>
-            Deixe seu recado aqui
+            Deixe seu recado aqui!
         </h1>
-        
-         <div class="container2">
-            Mensagens de usuarios
-         </div>
+
+        <div class="container2">
+           Algumas Mensagens de usuários
+        </div>
+
     </div>
 
-      <div class="mensagens-usuarios">
 
+    <div class="mensagens-usuarios">
 
-                <article class="card-mensagem">
+        {% for mensagem in mural_recados %}
 
+            <article class="card-mensagem">
 
-                    <div class="card-mensagem-conteudo">
+                <div class="card-mensagem-conteudo">
 
-                        <span class="nome">
-                            {{ mensagem.nome }}
-                        </span>
+                    <span class="nome">
+                        {{ mensagem.nome }}
+                    </span>
 
-                        <h3>
-                            {{ mensagem.data }}
-                        </h3>
+                    <h3>
+                        {{ mensagem.data }}
+                    </h3>
 
-                        <p>
-                            {{ mensagem.mensagem }}
-                        </p>
+                    <p>
+                        {{ mensagem.mensagem }}
+                    </p>
 
-                    </div>
+                </div>
 
-                </article>
+            </article>
 
-           
+        {% empty %}
 
-        </div>
+            <p class="sem-mensagens">
+                Ainda não existem mensagens no mural.
+            </p>
+
+        {% endfor %}
+
+    </div>
 
 </section>
 

@@ -123,37 +123,254 @@ button {
     color: #1c3017;
 }
 
-p {
-    color: #686b51;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: 3rem;
-    
+
+
+/* =========================
+   PÁGINA INICIAL
+   ========================= */
+
+   .pagina-inicio {
+    width: 100%;
+    padding: 40px 16px;
 }
 
-h1 {
-    color: #686b51;
+
+/* Área que contém todos os cards */
+
+.mensagens-usuarios {
+    width: 100%;
+    max-width: 700px;
+
+    margin-left: auto;
+    margin-right: auto;
+
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-     font-size: 3rem;
-    
-}
-.container2 {
-    color: #686b51;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-     font-size: 3rem;
+
+    gap: 20px;
 }
 
-/* PÁGINA DE MENSAGENS */
+
+/* Cada caixa de mensagem */
+
+.mensagens-usuarios .card-mensagem {
+    width: 100%;
+    max-width: 600px;
+
+    margin: 0 auto;
+
+    padding: 25px;
+
+    background-color: #e8f5da;
+
+    border: 2px solid #686b51;
+    border-radius: 10px;
+
+    text-align: left;
+
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.10);
+}
+
+
+/* Conteúdo da mensagem */
+
+.mensagens-usuarios .card-mensagem-conteudo {
+    width: 100%;
+}
+
+
+/* Nome */
+
+.mensagens-usuarios .nome {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #1b3622;
+
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+
+/* Data */
+
+.mensagens-usuarios .card-mensagem-conteudo h3 {
+    margin: 0 0 15px;
+
+    color: #686b51;
+
+    font-size: 0.9rem;
+}
+
+
+/* Texto da mensagem */
+
+.mensagens-usuarios .card-mensagem-conteudo p {
+    margin: 0;
+
+    color: #686b51;
+
+    font-size: 1.1rem;
+
+    line-height: 1.5;
+
+    text-align: left;
+}
+
+
+
+/* =========================
+   APRESENTAÇÃO
+   ========================= */
+
+.pagina-inicio .recado {
+    width: 100%;
+    max-width: 800px;
+
+    margin: 0 auto 35px;
+
+    text-align: center;
+}
+
+.pagina-inicio .recado p {
+    margin: 0 0 10px;
+
+    color: #686b51;
+
+    font-size: 1.3rem;
+}
+
+.pagina-inicio .recado h1 {
+    margin: 5px 0;
+
+    color: #686b51;
+
+    font-size: 2.3rem;
+    line-height: 1.2;
+}
+
+
+/* =========================
+   TÍTULO "MENSAGENS DE USUÁRIOS"
+   ========================= */
+
+.pagina-inicio .container2 {
+    margin-top: 30px;
+
+    color: #686b51;
+
+    font-size: 1.5rem;
+    font-weight: bold;
+
+    text-align: center;
+}
+
+
+/* =========================
+   LISTA DE MENSAGENS
+   ========================= */
+
+.mensagens-usuarios {
+    width: 100%;
+    max-width: 700px;
+
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+
+/* =========================
+   CARD DA MENSAGEM
+   ========================= */
+
+.mensagens-usuarios .card-mensagem {
+    width: 100%;
+
+    padding: 25px;
+
+    background-color: #e8f5da;
+
+    border: 2px solid #686b51;
+    border-radius: 10px;
+
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================
+   CONTEÚDO DO CARD
+   ========================= */
+
+.card-mensagem-conteudo {
+    width: 100%;
+}
+
+
+/* NOME */
+
+.card-mensagem-conteudo .nome {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #1b3622;
+
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+
+/* DATA */
+
+.card-mensagem-conteudo h3 {
+    margin: 0 0 15px;
+
+    color: #686b51;
+
+    font-size: 0.9rem;
+    font-weight: normal;
+}
+
+
+/* MENSAGEM */
+
+.card-mensagem-conteudo p {
+    margin: 0;
+
+    color: #686b51;
+
+    font-size: 1.1rem;
+    line-height: 1.5;
+
+    word-wrap: break-word;
+}
+
+
+/* =========================
+   QUANDO NÃO EXISTIREM MENSAGENS
+   ========================= */
+
+.sem-mensagens {
+    color: #686b51;
+
+    font-size: 1.1rem !important;
+
+    text-align: center;
+}
+
+
+/* =========================
+   PÁGINA DE MENSAGENS
+   ========================= */
 
 .pagina-mensagens {
+    width: 100%;
     min-height: calc(100vh - 150px);
 
     display: flex;
@@ -163,54 +380,242 @@ h1 {
     padding: 40px 16px;
 }
 
+
+/* =========================
+   TÍTULO DA PÁGINA
+   ========================= */
+
+.recado {
+    width: 100%;
+    max-width: 700px;
+
+    text-align: center;
+
+    margin-bottom: 30px;
+}
+
+.recado p {
+    margin: 0 0 8px;
+
+    color: #686b51;
+
+    font-size: 1.3rem;
+}
+
+.recado h1 {
+    margin: 0;
+
+    color: #686b51;
+
+    font-size: 2.5rem;
+}
+
+
+/* =========================
+   CARD DO FORMULÁRIO
+   ========================= */
+
 .card-mensagem {
     width: 100%;
-    max-width: 600px;
+    max-width: 550px;
 
-    margin: 0 auto;
+    padding: 30px;
 
-    display: block;
+    background-color: #e8f5da;
+
+    border: 2px solid #686b51;
+    border-radius: 10px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
+}
+
+
+/* =========================
+   TEXTO DO FORMULÁRIO
+   ========================= */
+
+.formulario {
+    width: 100%;
+
+    margin-bottom: 25px;
 
     text-align: center;
 }
 
-.card-mensagem form {
-    width: 100%;
-    margin: 0 auto;
+.formulario p {
+    margin: 0;
+
+    color: #686b51;
+
+    font-size: 1.1rem;
 }
 
-.card-mensagem form > p {
-    width: 100%;
-    margin: 0 0 20px;
 
-    text-align: center;
-}
+/* =========================
+   CAMPOS
+   ========================= */
 
 .mensagens {
     width: 100%;
 
-    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
 
-    text-align: left;
+    margin-bottom: 18px;
 }
 
 .mensagens label {
-    display: block;
-    margin-bottom: 5px;
+    margin-bottom: 6px;
+
+    color: #686b51;
+
+    font-size: 1rem;
+    font-weight: bold;
 }
 
-.mensagens input {
-    display: block;
 
+/* =========================
+   INPUTS
+   ========================= */
+
+.mensagens input {
     width: 100%;
     min-height: 45px;
 
-    padding: 8px;
+    padding: 10px;
 
-    background-color: #e8f5da;
+    background-color: #f2edc7;
 
-    border: 1px solid #686b51;
-    border-radius: 5px;
+    color: #686b51;
+
+    border: 2px solid #686b51;
+    border-radius: 6px;
+
+    outline: none;
+}
+
+
+
+
+/* =========================
+   CAMPO DE MENSAGEM
+   ========================= */
+
+
+.mensagens input[name="mensagem"] {
+    min-height: 100px;
+}
+
+
+/* =========================
+   BOTÃO
+   ========================= */
+
+.botao-mensagem {
+    width: 100%;
+
+    margin-top: 5px;
+    
+
+    border: none;
+    border-radius: 6px;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   CONFIRMAÇÃO
+   ========================= */
+
+.confirmacao-mensagem {
+    text-align: center;
+}
+
+.icone-sucesso {
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 15px;
+
+    background-color: #a8f0c5;
+
+    color: #1b3622;
+
+    border-radius: 50%;
+
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.confirmacao-mensagem h2 {
+    margin: 0 0 10px;
+
+    color: #686b51;
+}
+
+/*Mensagens usuario*/
+
+.pagina-mensagens {
+    width: 90%;
+    max-width: 1000px;
+    margin: 40px auto;
+    color: #686b51;
+}
+
+.pagina-mensagens .titulo-mensagens {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.pagina-mensagens .nossas-mensagens {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Card de cada mensagem */
+
+.pagina-mensagens .article-mensagem {
+    background: #f2edc7;
+    border-radius: 12px;
+    padding: 20px;
+    border-left: 5px solid #686b51;
+}
+
+/* Conteúdo */
+
+.pagina-mensagens .card-mensagem-conteudo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Nome */
+
+.pagina-mensagens .nome {
+    font-size: 20px;
+    font-weight: bold;
+    color: #686b51;
+}
+
+/* Data */
+
+.pagina-mensagens .data-mensagem {
+    font-size: 14px;
+    color: #686b51;
+}
+
+/* Texto */
+
+.pagina-mensagens .texto-mensagem {
+    font-size: 17px;
+    color: #686b51;
+    line-height: 1.5;
 }
 
 
@@ -222,3 +627,355 @@ h1 {
     text-align: center;
     
 }
+
+/* PÁGINA DE LOGIN */
+
+.guia-login {
+    width: 100%;
+    min-height: calc(100vh - 150px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 40px 16px;
+}
+
+.container-login {
+    width: 100%;
+    max-width: 450px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container-login h1 {
+    margin: 0 0 10px;
+
+    color: #686b51;
+    font-size: 3rem;
+}
+
+.usuario-login {
+    width: 100%;
+    max-width: 400px;
+
+    text-align: center;
+}
+
+.texto-apoio {
+    margin: 0 0 20px;
+
+    color: #686b51;
+    font-size: 1.2rem;
+}
+
+
+/* FORMULÁRIO */
+
+.form-login {
+    width: 100%;
+}
+
+
+/* CAIXA VERDE QUE ENVOLVE OS CAMPOS */
+
+.informacao-usuario {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 25px;
+
+    background-color: #e8f5da;
+
+    border: 2px double #686b51;
+    border-radius: 10px;
+}
+
+
+/* CAMPO */
+
+.campo {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 18px;
+
+    text-align: left;
+}
+
+
+/* TEXTO E-MAIL / SENHA */
+
+.campo label {
+    margin-bottom: 6px;
+
+    color: #686b51;
+
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+
+/* CAIXA DE DIGITAÇÃO */
+
+.campo input {
+    width: 100%;
+    height: 45px;
+
+    padding: 10px;
+
+    background-color: #f2edc7;
+
+    color: #686b51;
+
+    border: 2px solid #686b51;
+    border-radius: 6px;
+
+    outline: none;
+}
+
+
+/* QUANDO CLICAR NA CAIXA */
+
+.campo input:focus {
+    background-color: #f2edc7;
+
+    border-color: #a8f0c5;
+}
+
+
+/* BOTÃO ENTRAR */
+
+.botao-login {
+    width: 100%;
+
+    margin-top: 5px;
+
+    border: none;
+    border-radius: 6px;
+
+    cursor: pointer;
+}
+
+
+/* Login CADASTRO */
+
+.login-cadastro {
+    margin-top: 20px;
+    color: #686b51;
+}
+
+.login-cadastro p {
+    margin: 0 0 10px;
+
+    color: #686b51;
+    font-size: 1rem;
+}
+
+.login-cadastro .botao {
+    width: 100%;
+}
+
+.login-cadastro .botao:hover {
+    background-color: #daf5df;
+}
+
+
+.botao-secundario {
+    background-color: #f2edc7;
+    color: #686b51;
+
+    border: 2px solid #686b51;
+    border-radius: 6px;
+}
+
+.botao-secundario:hover {
+    background-color: #e8f5da;
+    color: #1c3017;
+}
+
+/*Cadastro*/
+
+.pagina-login {
+    width: 100%;
+    min-height: calc(100vh - 150px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 40px 16px;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 900px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 50px;
+}
+
+
+/*APRESENTAÇÃO */
+
+.login-apresentacao {
+    max-width: 400px;
+}
+
+.login-apresentacao h1 {
+    margin: 0 0 15px;
+
+    color: #686b51;
+
+    font-size: 2.5rem;
+    line-height: 1.2;
+}
+
+.login-apresentacao .cadastro p {
+    margin: 0;
+
+    color: #686b51;
+
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+
+/*CARD DO CADASTRO*/
+
+.card-login {
+    width: 100%;
+    max-width: 400px;
+
+    padding: 30px;
+
+    background-color: #e8f5da;
+
+    border: 2px solid #686b51;
+    border-radius: 10px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
+}
+
+.card-login h2 {
+    margin: 0 0 20px;
+
+    color: #686b51;
+
+    font-size: 2rem;
+
+    text-align: center;
+}
+
+
+/* CAMPOS */
+
+.card-login .campo {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 16px;
+
+    text-align: left;
+}
+
+.card-login .campo label {
+    margin-bottom: 6px;
+
+    color: #686b51;
+
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.card-login .campo input {
+    width: 100%;
+    height: 45px;
+
+    padding: 10px;
+
+   background-color: #f2edc7;
+
+    color: #686b51;
+
+    border: 2px solid #686b51;
+    border-radius: 6px;
+
+    outline: none;
+}
+
+
+/* QUANDO CLICAR NO CAMPO */
+
+.card-login .campo input:focus {
+    background-color: #f2edc7;
+
+    border-color: #a8f5c5;
+}
+
+
+/* BOTÃO CRIAR CONTA */
+
+.card-login .botao-login {
+    width: 100%;
+
+    margin-top: 5px;
+
+    border: none;
+    border-radius: 6px;
+
+    cursor: pointer;
+}
+
+
+/* ÁREA "JÁ POSSUI UMA CONTA?" */
+
+.card-login .login-cadastro {
+    margin-top: 20px;
+
+    text-align: center;
+}
+
+.card-login .login-cadastro p {
+    margin: 0 0 10px;
+
+    color: #686b51;
+
+    font-size: 1rem;
+}
+
+.card-login .login-cadastro .botao {
+    width: 100%;
+}
+
+
+/* BOTÃO SECUNDÁRIO */
+
+.botao-secundario {
+    background-color: #f2edc7;
+
+    color: #686b51;
+
+    border: 2px solid #686b51;
+    border-radius: 6px;
+}
+
+.botao-secundario:hover {
+    background-color: #a8f0c5;
+
+    color: #1b3622;
+}
+
+
+
