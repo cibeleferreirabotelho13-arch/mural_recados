@@ -30,18 +30,35 @@ def mensagens(request: HttpRequest) -> HttpResponse:
         data = request.POST.get('data', '').strip()
         mensagem = request.POST.get('mensagem', '').strip()
 
-        Mensagens.objects.create(
+        nova_mensagem = Mensagens.objects.create(
             nome=nome,
             data=data,
             mensagem=mensagem,
+            usuario=request.user,
         )
 
         contexto = {
             'mensagem_enviada': True,
-            'mensagem': mensagem,
+            'mensagem': nova_mensagem,
         }
 
     return render(request, 'pages/mensagens.html', contexto)
+
+
+
+def lista(request: HttpRequest) -> HttpResponse:
+
+    mural_recados = Mensagens.objects.order_by("-id")
+
+    contexto = {
+        "mensagens": mural_recados,
+    }
+
+    return render(
+        request,
+        "pages/lista.html",
+        contexto,
+    )
 
 def cadastro_view(request: HttpRequest) -> HttpResponse:
     contexto = {}
@@ -73,6 +90,7 @@ def cadastro_view(request: HttpRequest) -> HttpResponse:
         return redirect("pages:login")  
 
     return render(request, "pages/cadastro.html", contexto)
+
 
 
 def login_view(request: HttpRequest) -> HttpResponse:
@@ -109,27 +127,20 @@ def logout_view(request: HttpRequest) -> HttpResponse:
     return redirect("pages:index")
 
 
-def lista(request: HttpRequest) -> HttpResponse:
-    mural_recados = Mensagens.objects.order_by('-id')
-
-    contexto = {
-        "mensagens": mural_recados,
-    }
-
-    return render(
-        request,
-        "pages/lista.html",
-        contexto,
-    )
-
 
 @login_required
 def meus_recados(request: HttpRequest) -> HttpResponse:
 
-    recados = Mensagens.objects.all().order_by("-id")
+    recados = Mensagens.objects.filter(
+        usuario=request.user
+    ).order_by("-id")
 
-    contexto = {"recados": recados}
+    contexto = {
+        "recados": recados
+    }
 
     return render(
-        request=request, template_name="pages/meus_recados.html", context=contexto
+        request=request,
+        template_name="pages/meus_recados.html",
+        context=contexto
     )

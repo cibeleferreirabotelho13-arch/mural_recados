@@ -977,5 +977,182 @@ button {
     color: #1b3622;
 }
 
+/* =========================
+   MEUS RECADOS
+   ========================= */
+
+.guia-meus-recados {
+    width: 100%;
+
+    min-height: calc(100vh - 150px);
+
+    padding: 40px 16px;
+}
+
+
+/* =========================
+   CABEÇALHO
+   ========================= */
+
+.meus-cabecalho {
+    width: 100%;
+    max-width: 900px;
+
+    margin: 0 auto 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+.meus-cabecalho h1 {
+    margin: 0 0 8px;
+
+    color: #686b51;
+
+    font-size: 2.5rem;
+}
+
+.meus-cabecalho p {
+    margin: 0;
+
+    color: #686b51;
+
+    font-size: 1.1rem;
+}
+
+
+/* =========================
+   BOTÃO
+   ========================= */
+
+.meus-cabecalho .botao {
+    flex-shrink: 0;
+}
+
+
+/* =========================
+   GRADE DOS RECADOS
+   ========================= */
+
+.grade-meus-recados {
+    width: 100%;
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+
+/* =========================
+   CARD
+   ========================= */
+
+.card-meu-recado {
+    width: 100%;
+
+    padding: 25px;
+
+    background-color: #e8f5da;
+
+    border: 2px solid #686b51;
+    border-radius: 10px;
+
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.10);
+}
+
+
+/* =========================
+   CABEÇALHO DO CARD
+   ========================= */
+
+.meu-recado-cabecalho {
+    margin-bottom: 15px;
+}
+
+
+/* NOME */
+
+.nome-usuario {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #1b3622;
+
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+
+/* DATA */
+
+.meu-recado-cabecalho h2 {
+    margin: 0;
+
+    color: #686b51;
+
+    font-size: 0.9rem;
+    font-weight: normal;
+}
+
+
+/* =========================
+   TEXTO DO RECADO
+   ========================= */
+
+.texto-recado {
+    margin: 0;
+
+    color: #686b51;
+
+    font-size: 1.1rem;
+    line-height: 1.5;
+
+    word-wrap: break-word;
+}
+
+
+/* =========================
+   NENHUM RESULTADO
+   ========================= */
+
+.nenhum-resultado {
+    width: 100%;
+    max-width: 600px;
+
+    margin: 40px auto;
+    padding: 35px;
+
+    background-color: #e8f5da;
+
+    border: 2px solid #686b51;
+    border-radius: 10px;
+
+    text-align: center;
+}
+
+.nenhum-resultado h2 {
+    margin: 0 0 10px;
+
+    color: #686b51;
+
+    font-size: 1.7rem;
+}
+
+.nenhum-resultado p {
+    margin: 0 0 20px;
+
+    color: #686b51;
+
+    font-size: 1rem;
+}
 
 
