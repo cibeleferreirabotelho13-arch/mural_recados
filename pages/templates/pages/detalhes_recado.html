@@ -1,0 +1,43 @@
+{% extends 'pages/base.html' %}
+
+{% block title %}
+  Detalhes do Recado | Mural de Recados
+{% endblock %}
+
+{% block content %}
+
+<section class="pagina-detalhes-recado">
+
+    <div class="container-detalhes-recado">
+        <h1>Detalhes do Recado</h1>
+    </div>
+
+    <div class="detalhes-recado">
+
+        <span class="detalhes-recado-icone">📌</span>
+
+        <p>
+            <strong>Nome:</strong> {{ recado.nome }}
+        </p>
+
+        <p>
+            <strong>Data:</strong> {{ recado.data }}
+        </p>
+
+        <p>
+            <strong>Mensagem:</strong> {{ recado.mensagem }}
+        </p>
+
+        <a href="{% url 'pages:editar_recado' recado.id %}">
+            Editar
+        </a>
+
+        <a href="{% url 'pages:excluir_recado' recado.id %}">
+            Excluir
+        </a>
+
+    </div>
+
+</section>
+
+{% endblock %}

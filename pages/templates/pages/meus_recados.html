@@ -1,92 +1,100 @@
 {% extends 'pages/base.html' %}
 
 {% block title %}
-    Meus Recados | Mural de Recados
+Meus Recados | Mural de Recados
 {% endblock %}
 
 {% block content %}
 
 <section class="guia-meus-recados">
+<div class="container">
 
-    <div class="container">
+    <div class="meus-cabecalho">
 
-        <div class="meus-cabecalho">
+        <div>
+            <h1>Meus recados</h1>
 
-            <div>
-                <h1>
-                    Meus recados
-                </h1>
+            <p>
+                Veja os recados que você enviou para o mural de recados.
+            </p>
+        </div>
 
-                <p>
-                    Veja os recados que você enviou para o mural de recados.
-                </p>
-            </div>
+        <a
+            href="{% url 'pages:mensagens' %}"
+            class="botao botao-principal"
+        >
+            Enviar outra mensagem
+        </a>
+
+    </div>
+
+
+    {% if recados %}
+
+        <div class="grade-meus-recados">
+
+            {% for recado in recados %}
+
+                <article class="card-meu-recado">
+
+                    <div class="meu-recado-cabecalho">
+
+                        <span class="nome-usuario">
+                            {{ recado.nome }}
+                        </span>
+
+                        <h2>
+                            {{ recado.data }}
+                        </h2>
+
+                    </div>
+
+                    <p class="texto-recado">
+                        {{ recado.mensagem }}
+                    </p>
+
+                    <div class="meus_recados-opcoes">
+
+                        <a
+                            href="{% url 'pages:detalhes_recado' recado.pk %}"
+                            class="botao botao-principal"
+                        >
+                            Ver detalhes
+                        </a>
+
+                    </div>
+
+                </article>
+
+            {% endfor %}
+
+        </div>
+
+    {% else %}
+
+        <div class="nenhum-resultado">
+
+            <h2>
+                Nenhuma mensagem encontrada
+            </h2>
+
+            <p>
+                Você ainda não possui mensagens
+                enviadas para o mural de recados.
+            </p>
 
             <a
                 href="{% url 'pages:mensagens' %}"
                 class="botao botao-principal"
             >
-                Enviar outra mensagem
+                Enviar mensagem
             </a>
 
         </div>
 
+    {% endif %}
 
-        {% if recados %}
-
-            <div class="grade-meus-recados">
-
-                {% for recado in recados %}
-
-                    <article class="card-meu-recado">
-
-                        <div class="meu-recado-cabecalho">
-
-                            <span class="nome-usuario">
-                                {{ recado.nome }}
-                            </span>
-
-                            <h2>
-                                {{ recado.data }}
-                            </h2>
-
-                        </div>
-
-                        <p class="texto-recado">
-                            {{ recado.mensagem }}
-                        </p>
-
-                    </article>
-
-                {% endfor %}
-
-            </div>
-
-        {% else %}
-
-            <div class="nenhum-resultado">
-
-                <h2>
-                    Nenhuma mensagem encontrada
-                </h2>
-
-                <p>
-                    Você ainda não possui mensagens
-                    enviadas para o mural de recados.
-                </p>
-
-                <a
-                    href="{% url 'pages:mensagens' %}"
-                    class="botao botao-principal"
-                >
-                    Enviar mensagem
-                </a>
-
-            </div>
-
-        {% endif %}
-
-    </div>
+</div>
 
 </section>
 

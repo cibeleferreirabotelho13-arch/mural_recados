@@ -1,0 +1,63 @@
+{% extends 'pages/base.html' %}
+
+{% block title %}
+    Excluir Recado | Mural de Recados
+{% endblock %}
+
+{% block content %}
+
+<section class="pagina-excluir-recado">
+
+    <div class="container-excluir-recado">
+
+        <h1>Excluir Recado</h1>
+
+        <div class="excluir-recado">
+
+            <span class="excluir-recado-icone">🗑️</span>
+
+            <h2>Tem certeza que deseja excluir este recado?</h2>
+
+            <p>
+                <strong>Nome:</strong> {{ recado.nome }}
+            </p>
+
+            <p>
+                <strong>Mensagem:</strong> {{ recado.mensagem }}
+            </p>
+
+            <p>
+                Essa ação não poderá ser desfeita.
+            </p>
+
+        </div>
+
+        <form method="post" class="form-excluir-recado">
+
+            {% csrf_token %}
+
+            <div class="excluir-acoes">
+
+                <button
+                    type="submit"
+                    class="botao botao-principal"
+                >
+                    Sim, excluir
+                </button>
+
+                <a
+                    href="{% url 'pages:detalhes_recado' recado.id %}"
+                    class="botao botao-secundario"
+                >
+                    Cancelar
+                </a>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</section>
+
+{% endblock %}

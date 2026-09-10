@@ -1120,9 +1120,7 @@ button {
 }
 
 
-/* =========================
-   NENHUM RESULTADO
-   ========================= */
+/*NENHUM RESULTADO*/
 
 .nenhum-resultado {
     width: 100%;
@@ -1155,4 +1153,643 @@ button {
     font-size: 1rem;
 }
 
+
+/*DETALHES DO RECADO*/
+
+.pagina-detalhes-recado {
+width: 100%;
+min-height: calc(100vh - 150px);
+
+display: flex;
+flex-direction: column;
+align-items: center;
+
+padding: 50px 16px;
+
+
+}
+
+/*TÍTULO*/
+
+.container-detalhes-recado {
+width: 100%;
+max-width: 600px;
+
+margin-bottom: 25px;
+
+text-align: center;
+
+
+}
+
+.container-detalhes-recado h1 {
+margin: 0;
+
+color: #686b51;
+
+font-size: 2.5rem;
+line-height: 1.2;
+
+
+}
+
+/*CARD DO RECADO*/
+
+.detalhes-recado {
+width: 100%;
+max-width: 600px;
+
+padding: 30px;
+
+background-color: #e8f5da;
+
+border: 2px solid #686b51;
+border-radius: 10px;
+
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
+
+color: #686b51;
+
+
+}
+
+/* ÍCONE*/
+
+.detalhes-recado-icone {
+width: 60px;
+height: 60px;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+margin: 0 auto 25px;
+
+background-color: #a8f0c5;
+
+border-radius: 50%;
+
+font-size: 2rem;
+
+
+}
+
+/*INFORMAÇÕES*/
+
+.detalhes-recado p {
+margin: 0 0 18px;
+
+padding: 12px 15px;
+
+background-color: #f2edc7;
+
+border-left: 4px solid #686b51;
+border-radius: 6px;
+
+color: #686b51;
+
+font-size: 1.1rem;
+line-height: 1.5;
+
+word-wrap: break-word;
+
+
+}
+
+/* NOME, DATA E MENSAGEM */
+
+.detalhes-recado p strong {
+color: #1b3622;
+}
+
+/*BOTÕES */
+
+.detalhes-recado a {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+
+min-height: 46px;
+
+margin-top: 10px;
+margin-right: 8px;
+
+padding: 11px 20px;
+
+background-color: #a8f0c5;
+
+color: #1b3622;
+
+border: 2px double #686b51;
+border-radius: 6px;
+
+font-weight: 700;
+line-height: 1.2;
+
+text-align: center;
+text-decoration: none;
+
+
+
+
+}
+
+/* HOVER */
+
+.detalhes-recado a:hover {
+background-color: #daf5df;
+
+color: #1b3622;
+
+
+
+
+}
+
+/*BOTÃO EXCLUIR*/
+
+.detalhes-recado a[href*="excluir"] {
+background-color: #f2edc7;
+
+color: #686b51;
+
+border: 2px double #686b51;
+
+
+}
+
+.detalhes-recado a[href*="excluir"]:hover {
+background-color: #e8f5da;
+
+color: #1b3622;
+
+
+}
+
+/*PÁGINA EDITAR RECADO*/
+
+.pagina-editar-recado {
+width: 100%;
+min-height: calc(100vh - 150px);
+
+display: flex;
+justify-content: center;
+align-items: center;
+
+padding: 50px 16px;
+
+
+}
+
+/*CONTAINER*/
+
+.container-editar-recado {
+width: 100%;
+max-width: 600px;
+}
+
+/*TÍTULO*/
+
+.container-editar-recado h1 {
+margin: 0 0 25px;
+
+color: #686b51;
+
+font-size: 2.5rem;
+line-height: 1.2;
+
+text-align: center;
+
+
+}
+
+/*TEXTO DE APRESENTAÇÃO*/
+
+.editar-recado {
+width: 100%;
+
+margin-bottom: 25px;
+
+padding: 20px;
+
+background-color: #e8f5da;
+
+border: 2px solid #686b51;
+border-radius: 10px;
+
+text-align: center;
+
+box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+
+
+}
+
+/* ÍCONE */
+
+.editar-recado-icone {
+width: 55px;
+height: 55px;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+margin: 0 auto 12px;
+
+background-color: #a8f0c5;
+
+border-radius: 50%;
+
+font-size: 1.8rem;
+
+
+}
+
+/* TEXTO */
+
+.editar-recado p {
+margin: 0;
+
+color: #686b51;
+
+font-size: 1.1rem;
+
+
+}
+
+/*FORMULÁRIO*/
+
+.form-editar-recado {
+width: 100%;
+
+padding: 30px;
+
+background-color: #e8f5da;
+
+border: 2px double #686b51;
+border-radius: 10px;
+
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
+
+
+}
+
+/* PARÁGRAFOS DO FORMULÁRIO*/
+
+.form-editar-recado p {
+display: flex;
+flex-direction: column;
+
+margin: 0 0 18px;
+
+
+}
+
+/*LABELS*/
+
+.form-editar-recado label {
+margin-bottom: 6px;
+
+color: #686b51;
+
+font-size: 1rem;
+font-weight: bold;
+
+
+}
+
+/*INPUTS*/
+
+.form-editar-recado input,
+.form-editar-recado textarea,
+.form-editar-recado select {
+width: 100%;
+
+padding: 10px;
+
+background-color: #f2edc7;
+
+color: #686b51;
+
+border: 2px double #686b51;
+border-radius: 6px;
+
+outline: none;
+
+font-family: Georgia, 'Times New Roman', Times, serif;
+
+
+
+}
+
+/* INPUT */
+
+.form-editar-recado input {
+min-height: 45px;
+}
+
+/* TEXTAREA */
+
+.form-editar-recado textarea {
+min-height: 120px;
+
+resize: vertical;
+
+
+}
+
+/* SELECT */
+
+.form-editar-recado select {
+min-height: 45px;
+}
+
+/*QUANDO CLICAR NO CAMPO*/
+
+.form-editar-recado input:focus,
+.form-editar-recado textarea:focus,
+.form-editar-recado select:focus {
+background-color: #fffef0;
+
+border-color: #a8f0c5;
+
+box-shadow: 0 0 0 2px rgba(168, 240, 197, 0.25);
+
+
+}
+
+
+.form-editar-recado .helptext {
+margin-top: 5px;
+
+color: #686b51;
+
+font-size: 0.85rem;
+
+
+}
+
+/*ERROS DO FORMULÁRIO*/
+
+.form-editar-recado .errorlist {
+margin: 0 0 6px;
+padding: 0;
+
+color: #7a3b3b;
+
+font-size: 0.9rem;
+
+
+
+
+}
+
+/*AÇÕES*/
+
+.editar-acoes {
+display: flex;
+justify-content: center;
+align-items: center;
+
+gap: 12px;
+
+margin-top: 25px;
+
+
+}
+
+/* BOTÕES */
+
+.editar-acoes .botao {
+min-width: 180px;
+
+border-radius: 6px;
+
+cursor: pointer;
+
+
+
+}
+
+/*BOTÃO SALVAR*/
+
+.editar-acoes .botao-principal {
+border: double;
+
+background-color: #a8f0c5;
+
+color: #1b3622;
+
+
+}
+
+.editar-acoes .botao-principal:hover {
+background-color: #daf5df;
+
+
+
+}
+
+/*BOTÃO CANCELAR*/
+
+.editar-acoes .botao-secundario {
+background-color: #f2edc7;
+
+color: #686b51;
+
+border: 2px double #686b51;
+
+
+}
+
+.editar-acoes .botao-secundario:hover {
+background-color: #e8f5da;
+
+color: #1b3622;
+
+
+
+}
+
+
+/* =========================
+PÁGINA EXCLUIR RECADO
+========================= */
+
+.pagina-excluir-recado {
+width: 100%;
+min-height: calc(100vh - 150px);
+
+padding: 40px 16px;
+
+
+}
+
+.container-excluir-recado {
+width: 100%;
+max-width: 600px;
+
+margin: 0 auto;
+
+
+}
+
+/*TÍTULO*/
+
+.container-excluir-recado h1 {
+margin: 0 0 25px;
+
+color: #686b51;
+
+font-size: 2.5rem;
+
+text-align: center;
+
+
+}
+
+/*CARD DE CONFIRMAÇÃO*/
+
+.excluir-recado {
+width: 100%;
+
+padding: 30px;
+
+background-color: #e8f5da;
+
+border: 2px double #686b51;
+border-radius: 10px;
+
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
+
+text-align: center;
+
+
+}
+
+/* ÍCONE */
+
+.excluir-recado-icone {
+display: block;
+
+margin-bottom: 15px;
+
+font-size: 3rem;
+
+
+}
+
+/* TÍTULO DO CARD */
+
+.excluir-recado h2 {
+margin: 0 0 20px;
+
+color: #686b51;
+
+font-size: 1.5rem;
+
+
+}
+
+/* INFORMAÇÕES DO RECADO */
+
+.excluir-recado p {
+margin: 8px 0;
+
+color: #686b51;
+
+font-size: 1.05rem;
+
+line-height: 1.5;
+
+
+}
+
+/* AVISO */
+
+.excluir-recado p:last-child {
+margin-top: 20px;
+
+color: #686b51;
+
+font-size: 0.95rem;
+
+
+
+}
+
+/*FORMULÁRIO*/
+
+.form-excluir-recado {
+width: 100%;
+
+margin-top: 25px;
+
+
+}
+
+/*BOTÕES*/
+
+.excluir-acoes {
+display: flex;
+
+justify-content: center;
+align-items: center;
+
+gap: 15px;
+
+flex-wrap: wrap;
+
+
+}
+
+.excluir-acoes .botao {
+min-width: 150px;
+
+border-radius: 6px;
+
+cursor: pointer;
+
+
+}
+
+/* BOTÃO EXCLUIR */
+
+.excluir-acoes .botao-principal {
+background-color: #d99a9a;
+
+color: #4a2525;
+
+border: 2px double #9b6868;
+
+
+}
+
+.excluir-acoes .botao-principal:hover {
+background-color: #c97878;
+
+color: #ffffff;
+
+
+}
+
+/* BOTÃO CANCELAR */
+
+.excluir-acoes .botao-secundario {
+background-color: #f2edc7;
+
+color: #686b51;
+
+border: 2px double #686b51;
+
+
+}
+
+.excluir-acoes .botao-secundario:hover {
+background-color: #e8f5da;
+
+color: #1c3017;
+
+
+}
 

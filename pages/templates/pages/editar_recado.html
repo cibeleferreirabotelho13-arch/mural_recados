@@ -1,0 +1,55 @@
+{% extends 'pages/base.html' %}
+
+{% block title %}
+    Editar Recado | Mural de Recados
+{% endblock %}
+
+{% block content %}
+
+<section class="pagina-editar-recado">
+
+    <div class="container-editar-recado">
+
+        <h1>Editar Recado</h1>
+
+        <div class="editar-recado">
+
+            <span class="editar-recado-icone">✏️</span>
+
+            <p>
+                Edite seu recado abaixo.
+            </p>
+
+        </div>
+
+        <form method="post" class="form-editar-recado">
+
+            {% csrf_token %}
+
+            {{ form.as_p }}
+
+            <div class="editar-acoes">
+
+                <button
+                    type="submit"
+                    class="botao botao-principal"
+                >
+                    Salvar alterações
+                </button>
+
+                <a
+                    href="{% url 'pages:meus_recados' %}"
+                    class="botao botao-secundario"
+                >
+                    Cancelar
+                </a>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</section>
+
+{% endblock %}

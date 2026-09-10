@@ -3,14 +3,16 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.http import HttpRequest, HttpResponse
-from django.shortcuts import redirect, render
+from django.core.exceptions import PermissionDenied
+from django.shortcuts import get_object_or_404, redirect, render
 
+from .forms import MensagemForm
 from .models import Mensagens
 
 
 def index(request: HttpRequest) -> HttpResponse:
 
-    mural_recados = Mensagens.objects.order_by('-id')[:3]
+    mural_recados = Mensagens.objects.order_by('-id')[:6]
 
     contexto = {
         'titulo_pagina': 'Mural_De_Recados',
@@ -22,28 +24,35 @@ def index(request: HttpRequest) -> HttpResponse:
 
 @login_required
 def mensagens(request: HttpRequest) -> HttpResponse:
+    if request.method == "POST":
+        form = MensagemForm(request.POST)
 
-    contexto = {}
+        if form.is_valid():
+            mensagem = form.save(commit=False)
+            mensagem.usuario = request.user
+            mensagem.save()
 
-    if request.method == 'POST':
-        nome = request.POST.get('nome', '').strip()
-        data = request.POST.get('data', '').strip()
-        mensagem = request.POST.get('mensagem', '').strip()
+            messages.success(
+                request,
+                "Mensagem enviada com sucesso.",
+            )
 
-        nova_mensagem = Mensagens.objects.create(
-            nome=nome,
-            data=data,
-            mensagem=mensagem,
-            usuario=request.user,
-        )
+            return redirect(
+                "pages:detalhes_recado",
+                id=mensagem.pk,
+            )
+    else:
+        form = MensagemForm()
 
-        contexto = {
-            'mensagem_enviada': True,
-            'mensagem': nova_mensagem,
-        }
+    contexto = {
+        "form": form,
+    }
 
-    return render(request, 'pages/mensagens.html', contexto)
-
+    return render(
+        request,
+        "pages/mensagens.html",
+        contexto,
+    )
 
 
 def lista(request: HttpRequest) -> HttpResponse:
@@ -126,6 +135,72 @@ def logout_view(request: HttpRequest) -> HttpResponse:
 
     return redirect("pages:index")
 
+def detalhes_recado(request, id):
+    recado = Mensagens.objects.get(id=id)
+
+    print("ID DO RECADO:", recado.id)
+
+    return render(
+        request,
+        "pages/detalhes_recado.html",
+        {"recado": recado}
+    )
+
+
+@login_required
+def editar_recado(request, id):
+    recado = get_object_or_404(
+        Mensagens,
+        id=id,
+        usuario=request.user
+    )
+
+    if request.method == "POST":
+        form = MensagemForm(request.POST, instance=recado)
+
+        if form.is_valid():
+            form.save()
+
+            messages.success(
+                request,
+                "Recado atualizado com sucesso."
+            )
+
+            return redirect(
+                "pages:detalhes_recado",
+                id=recado.id
+            )
+
+    else:
+        form = MensagemForm(instance=recado)
+
+    return render(
+        request,
+        "pages/editar_recado.html",
+        {
+            "recado": recado,
+            "form": form,
+        }
+    )
+
+@login_required
+def excluir_recado(request, id):
+    recado = get_object_or_404(
+        Mensagens,
+        id=id,
+        usuario=request.user
+    )
+
+    if request.method == "POST":
+        recado.delete()
+
+        return redirect("pages:meus_recados")
+
+    return render(
+        request,
+        "pages/excluir_recado.html",
+        {"recado": recado}
+    )
 
 
 @login_required
