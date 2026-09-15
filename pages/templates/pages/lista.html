@@ -6,13 +6,34 @@
 
 {% block content %}
 
-<div class="pagina-mensagens">
+<div class="pagina-lista">
+
+    <div class="container-pesquisa">
+
+        <form method="get" action="{% url 'pages:lista' %}">
+            <input
+            type="text"
+            name="q"
+            placeholder="Pesquisar mensagens..."
+            value="{{ termo_busca }}"
+            >
+            
+            <button type="submit">
+                Pesquisar
+            </button>
+            
+            <span class="icone-pesquisa"> 🔎 </span>
+
+        </form>
+
+    </div>
 
     <h2 class="titulo-mensagens">
         Mensagens de usuários
     </h2>
 
     <section>
+
         <h2>
             Veja as mensagens dos usuários
         </h2>
@@ -24,7 +45,7 @@
                 <article class="article-mensagem">
 
                     <div class="card-mensagem-conteudo">
-
+                    
                         <span class="nome">
                             {{ mensagem.nome }}
                         </span>
@@ -48,6 +69,7 @@
             {% endfor %}
 
         </div>
+
     </section>
 
 </div>

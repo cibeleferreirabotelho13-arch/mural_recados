@@ -57,10 +57,18 @@ def mensagens(request: HttpRequest) -> HttpResponse:
 
 def lista(request: HttpRequest) -> HttpResponse:
 
-    mural_recados = Mensagens.objects.order_by("-id")
+    termo_busca = request.GET.get("q", "").strip()
+
+    mensagens = Mensagens.objects.all().order_by("-id")
+
+    if termo_busca:
+        mensagens = mensagens.filter(
+            mensagem__icontains=termo_busca
+        )
 
     contexto = {
-        "mensagens": mural_recados,
+        "mensagens": mensagens,
+        "termo_busca": termo_busca,
     }
 
     return render(
@@ -68,6 +76,7 @@ def lista(request: HttpRequest) -> HttpResponse:
         "pages/lista.html",
         contexto,
     )
+
 
 def cadastro_view(request: HttpRequest) -> HttpResponse:
     contexto = {}

@@ -267,10 +267,27 @@ button {
     text-align: center;
 }
 
+/*ÍCONE DE PESQUISA*/
 
-/* =========================
-   LISTA DE MENSAGENS
-   ========================= */
+.icone-pesquisa {
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 15px;
+
+    color: #1b3622;
+
+    border-radius: 50%;
+
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/*LISTA DE MENSAGENS */
 
 .mensagens-usuarios {
     width: 100%;
@@ -359,7 +376,6 @@ button {
 .sem-mensagens {
     color: #686b51;
 
-    font-size: 1.1rem !important;
 
     text-align: center;
 }
@@ -423,11 +439,13 @@ button {
 
     background-color: #e8f5da;
 
-    border: 2px solid #686b51;
+    border: 2px double #686b51;
     border-radius: 10px;
 
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
+    box-shadow: 0 4px 12px rgba(104, 107, 81, 0.10);
 }
+
+
 
 
 /* =========================
@@ -474,6 +492,7 @@ button {
 }
 
 
+
 /* =========================
    INPUTS
    ========================= */
@@ -488,12 +507,11 @@ button {
 
     color: #686b51;
 
-    border: 2px solid #686b51;
+    border: 2px double #686b51;
     border-radius: 6px;
 
     outline: none;
 }
-
 
 
 
@@ -502,9 +520,27 @@ button {
    ========================= */
 
 
-.mensagens input[name="mensagem"] {
-    min-height: 100px;
+.mensagens input {
+    width: 100%;
+    min-height: 45px;
+
+    padding: 10px;
+
+    background-color: #f2edc7;
+    color: #686b51;
+
+    border: 2px double #686b51;
+    border-radius: 6px;
+
+    outline: none;
 }
+
+.mensagens input:focus {
+    border-color: #a8f0c5;
+}
+
+
+
 
 
 /* =========================
@@ -558,65 +594,241 @@ button {
     color: #686b51;
 }
 
-/*Mensagens usuario*/
+/* ===============
+Mensagens usuario
+=================*/
 
-.pagina-mensagens {
-    width: 90%;
-    max-width: 1000px;
-    margin: 40px auto;
+
+.pagina-lista {
+    width: 100%;
+    min-height: calc(100vh - 150px);
+
+    padding: 40px 16px;
+}
+
+
+/*CONTAINER DA PESQUISA*/
+
+.container-pesquisa {
+    width: 100%;
+    max-width: 700px;
+
+    margin: 0 auto 30px;
+}
+
+.container-pesquisa form {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+}
+
+.container-pesquisa input {
+    flex: 1;
+
+    min-height: 45px;
+
+    padding: 10px 14px;
+
+    background-color: #f2edc7;
+
     color: #686b51;
+
+    border: 2px solid #686b51;
+    border-radius: 6px;
+
+    outline: none;
+
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1rem;
 }
 
-.pagina-mensagens .titulo-mensagens {
+.container-pesquisa input::placeholder {
+    color: #8a8b70;
+}
+
+.container-pesquisa input:focus {
+    background-color: #fffef0;
+
+    border-color: #a8f0c5;
+
+    box-shadow: 0 0 0 2px rgba(168, 240, 197, 0.25);
+}
+
+
+/*BOTÃO PESQUISAR */
+
+.container-pesquisa button {
+    min-height: 45px;
+
+    padding: 10px 18px;
+
+    background-color: #a8f0c5;
+
+    color: #1b3622;
+
+    border: 2px double #686b51;
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    transition: 0.2s ease;
+}
+
+.container-pesquisa button:hover {
+    background-color: #daf5df;
+
+    color: #1b3622;
+
+    transform: translateY(-1px);
+}
+
+
+/*TÍTULO*/
+
+.titulo-mensagens {
+    width: 100%;
+    max-width: 700px;
+
+    margin: 0 auto 10px;
+
+    color: #686b51;
+
+    font-size: 2.5rem;
+    line-height: 1.2;
+
     text-align: center;
-    margin-bottom: 30px;
 }
 
-.pagina-mensagens .nossas-mensagens {
+
+/*SUBTÍTULO */
+
+.pagina-lista section {
+    width: 100%;
+    max-width: 700px;
+
+    margin: 0 auto;
+}
+
+.pagina-lista section > h2 {
+    margin: 0 0 30px;
+
+    color: #686b51;
+
+    font-size: 1.2rem;
+
+    text-align: center;
+}
+
+
+/* =========================
+   LISTA DE MENSAGENS
+   ========================= */
+
+.nossas-mensagens {
+    width: 100%;
+
     display: flex;
     flex-direction: column;
+
     gap: 20px;
 }
 
-/* Card de cada mensagem */
 
-.pagina-mensagens .article-mensagem {
-    background: #f2edc7;
-    border-radius: 12px;
-    padding: 20px;
-    border-left: 5px solid #686b51;
+/*CARD DA MENSAGEM*/
+
+.article-mensagem {
+    width: 100%;
+
+    padding: 25px;
+
+    background-color: #e8f5da;
+
+    border: 2px double #686b51;
+    border-radius: 10px;
+
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.10);
+
 }
 
-/* Conteúdo */
+.article-mensagem:hover {
 
-.pagina-mensagens .card-mensagem-conteudo {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.14);
 }
 
-/* Nome */
 
-.pagina-mensagens .nome {
-    font-size: 20px;
-    font-weight: bold;
+/*CONTEÚDO DO CARD*/
+
+.article-mensagem .card-mensagem-conteudo {
+    width: 100%;
+}
+
+
+/*NOME DO USUÁRIO*/
+
+.article-mensagem .nome {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: #1b3622;
+
+    font-size: 1.3rem;
+}
+
+
+/*DATA*/
+
+.article-mensagem .data-mensagem {
+    display: block;
+
+    margin-bottom: 15px;
+
     color: #686b51;
+
+    font-size: 0.9rem;
 }
 
-/* Data */
 
-.pagina-mensagens .data-mensagem {
-    font-size: 14px;
+/*TEXTO DA MENSAGEM*/
+
+.article-mensagem .texto-mensagem {
+    margin: 0;
+
     color: #686b51;
-}
 
-/* Texto */
-
-.pagina-mensagens .texto-mensagem {
-    font-size: 17px;
-    color: #686b51;
+    font-size: 1.1rem;
     line-height: 1.5;
+
 }
+
+
+/*NENHUMA MENSAGEM*/
+
+.nossas-mensagens > p {
+    width: 100%;
+
+    margin: 20px auto;
+    padding: 30px;
+
+    background-color: #e8f5da;
+
+    border: 2px double #686b51;
+    border-radius: 10px;
+
+    color: #686b51;
+
+    font-size: 1.1rem;
+
+    text-align: center;
+}
+
+
+
 
 
 .rodape {
@@ -1791,5 +2003,246 @@ background-color: #e8f5da;
 color: #1c3017;
 
 
+}
+
+
+/* =========================
+   RESPONSIVIDADE
+   ========================= */
+
+@media (max-width: 768px) {
+
+/* =========================
+       CABEÇALHO
+========================= */
+
+.cabecalho-conteudo {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px 0;
+}
+
+.menu {
+width: 100%;
+justify-content: center;
+flex-wrap: wrap;
+gap: 15px;
+margin: 5px 0;
+}
+
+
+/* =========================
+PÁGINA INICIAL
+========================= */
+.pagina-inicio {
+padding: 30px 15px;
+}
+
+.pagina-inicio .recado h1 {
+font-size: 2rem;
+}
+
+.pagina-inicio .recado p {
+font-size: 1.1rem;
+}
+
+.mensagens-usuarios {
+max-width: 100%;
+}
+
+.mensagens-usuarios .card-mensagem {
+padding: 20px;
+}
+
+
+/* =========================
+PÁGINA DE MENSAGENS
+========================= */
+
+.pagina-mensagens {
+padding: 30px 15px;
+}
+
+.recado h1 {
+font-size: 2rem;
+}
+
+.card-mensagem {
+padding: 20px;
+}
+
+
+/* =========================
+LISTA DE MENSAGENS
+========================= */
+
+.pagina-lista {
+padding: 30px 15px;
+}
+
+.container-pesquisa form {
+flex-direction: column;
+}
+.container-pesquisa input,
+.container-pesquisa button {
+width: 100%;
+}
+
+.titulo-mensagens {
+font-size: 2rem;
+}
+
+.article-mensagem {
+padding: 20px;
+}
+
+/* =========================
+       LOGIN
+========================= */
+.guia-login {
+padding: 30px 15px;
+}
+
+.container-login h1 {
+font-size: 2.3rem;
+}
+
+.informacao-usuario {
+padding: 20px;
+}
+
+
+/* =========================
+CADASTRO
+========================= */
+
+.pagina-login {
+padding: 30px 15px;
+}
+
+.login-container {
+flex-direction: column;
+gap: 30px;
+}
+
+.login-apresentacao {
+max-width: 100%;
+text-align: center;
+}
+
+.login-apresentacao h1 {
+font-size: 2.1rem;
+}
+
+.card-login {
+padding: 20px;
+}
+
+/* =========================
+MEUS RECADOS
+========================= */
+
+.guia-meus-recados {
+padding: 30px 15px;
+}
+
+.meus-cabecalho {
+flex-direction: column;
+align-items: center;
+text-align: center;
+gap: 20px;
+}
+
+.meus-cabecalho h1 {
+font-size: 2rem;
+}
+
+.grade-meus-recados {     
+grid-template-columns: 1fr;
+}
+
+.card-meu-recado {
+padding: 20px;
+}
+
+
+/* =========================
+DETALHES DO RECADO
+========================= */
+
+.pagina-detalhes-recado {
+padding: 30px 15px;
+}
+
+.container-detalhes-recado h1 {
+font-size: 2rem;
+}
+
+.detalhes-recado {
+padding: 20px;
+}
+
+.detalhes-recado a {
+width: 100%;
+margin-right: 0;
+}
+
+
+/* =========================
+EDITAR RECADO
+========================= */
+
+.pagina-editar-recado {
+padding: 30px 15px;
+}
+
+.container-editar-recado h1 {
+font-size: 2rem;
+}
+
+.form-editar-recado {
+padding: 20px;
+}
+
+.editar-acoes {
+flex-direction: column;
+}
+
+.editar-acoes .botao {
+width: 100%;
+min-width: 0;
+}
+
+/* =========================
+EXCLUIR RECADO
+========================= */
+
+.pagina-excluir-recado {
+padding: 30px 15px;
+}
+
+.container-excluir-recado h1 {
+font-size: 2rem;
+}
+
+.excluir-recado {
+padding: 20px;
+}
+
+.excluir-acoes {
+flex-direction: column;
+}
+
+.excluir-acoes .botao {
+width: 100%;
+min-width: 0;
+}
+
+/* =========================
+RODAPÉ
+========================= */
+.rodape {
+padding: 10px;
+}
 }
 
