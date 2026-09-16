@@ -43,6 +43,10 @@
             
             
             
+            <li>
+              <a href="{% url 'pages:mensagens' %}">Mensagem</a>
+            </li>
+            
             {% endif %}
             
             {% if not request.user.is_authenticated %}
@@ -52,10 +56,6 @@
             </li>
             
             {% endif %}
-            
-            <li>
-              <a href="{% url 'pages:mensagens' %}">Mensagem</a>
-            </li>
             
             <li>
               <a href="{% url 'pages:lista' %}">Mensagens de usuarios</a>

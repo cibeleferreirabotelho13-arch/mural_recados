@@ -9,22 +9,43 @@
 <section class="pagina-inicio">
 
     <div class="recado">
-
+        <div class="mural-recados">
+        <h1> Mural de Recados </h1>
+        </div>
         <p>
             Olá! Seja bem-vindo ao Mural de Recados.
         </p>
+
+        <div class="informacoes">
+            <h1>
+                O Mural de Recados é uma aplicação web criada para permitir que usuários publiquem, consultem e pesquisem mensagens de forma simples e organizada. Os recados são armazenados no banco de dados e podem ser visualizados pelos usuários do sistema.
+
+            </h1>
+
+        </div>
 
         <h1>
             Tem algo para dizer?
         </h1>
 
-        <h1>
-            Deixe seu recado aqui!
-        </h1>
+        <div class="deixe-seu-recado">
+
+            <h1>
+                Deixe seu recado aqui!
+            </h1>
+        </div> 
+
+        <div class="link-mensagens">
+              
+              <a href="{% url 'pages:mensagens' %}">Enviar</a>
+
+        </div>
+
 
         <div class="container2">
            Algumas Mensagens de usuários
         </div>
+    
 
     </div>
 

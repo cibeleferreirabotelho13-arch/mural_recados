@@ -99,7 +99,7 @@ button {
     display: flex;
     align-items: center;
     background-color: #f2edc7;
-    border: double;
+    border: double #686b51;
     gap: 30px;
 
     margin: 10px;
@@ -120,7 +120,7 @@ button {
 }
 
 .menu a:hover {
-    color: #1c3017;
+    color: #daf5df;
 }
 
 
@@ -132,6 +132,69 @@ button {
    .pagina-inicio {
     width: 100%;
     padding: 40px 16px;
+}
+
+/* Titulo da Pagina */
+
+ .mural-recados {
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      grid-template-columns: auto;
+      background-color:  #f2edc7;
+      border: 2px double #686b51;
+ }
+
+ /* Informações do Mural */
+
+.informacoes {
+      align-items: center;
+      justify-content: flex-start;
+      display: flex;
+      grid-template-columns: auto;
+      background-color:  #f2edc7;
+      border: 2px double #686b51;
+}
+
+/* Link para Mensagens */
+
+.deixe-seu-recado {
+     align-items: center;
+      justify-content: center;
+      display: flex;
+      grid-template-columns: auto;
+}
+
+.link-mensagens {
+   min-height: 45px;
+
+    padding: 10px 18px;
+
+    background-color: #f2edc7;
+
+    color: #686b51;
+
+    border: 2px double #686b51;
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    transition: 0.2s ease;
+}
+
+.link-mensagens, a {
+    color: #686b51;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    grid-template-columns: auto;
+
+}
+
+.link-mensagens, a:hover {
+    color: #daf5df;
 }
 
 
