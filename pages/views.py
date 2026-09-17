@@ -228,3 +228,90 @@ def meus_recados(request: HttpRequest) -> HttpResponse:
         template_name="pages/meus_recados.html",
         context=contexto
     )
+
+# ERROS 
+
+def erro_400(
+    request: HttpRequest,
+    exception,
+) -> HttpResponse:
+
+    contexto = {
+        "codigo_erro": "400",
+        "titulo_erro": "Requisição inválida",
+        "mensagem_erro": (
+            "Não foi possível processar a solicitação "
+            "enviada. Verifique os dados e tente novamente."
+        ),
+    }
+
+    return render(
+        request,
+        "pages/erro.html",
+        contexto,
+        status=400,
+    )
+
+
+def erro_403(
+    request: HttpRequest,
+    exception,
+) -> HttpResponse:
+
+    contexto = {
+        "codigo_erro": "403",
+        "titulo_erro": "Acesso não permitido",
+        "mensagem_erro": (
+            "Você está autenticado, mas não possui permissão para acessar este recurso."
+        ),
+    }
+
+    return render(
+        request,
+        "pages/erro.html",
+        contexto,
+        status=403,
+    )
+
+
+def erro_404(
+    request: HttpRequest,
+    exception,
+) -> HttpResponse:
+
+    contexto = {
+        "codigo_erro": "404",
+        "titulo_erro": "Página não encontrada",
+        "mensagem_erro": (
+            "O conteúdo que você tentou acessar "
+            "não foi encontrado ou não está mais disponível."
+        ),
+    }
+
+    return render(
+        request,
+        "pages/erro.html",
+        contexto,
+        status=404,
+    )
+
+
+def erro_500(
+    request: HttpRequest,
+) -> HttpResponse:
+
+    contexto = {
+        "codigo_erro": "500",
+        "titulo_erro": "Ocorreu um erro inesperado",
+        "mensagem_erro": (
+            "Não foi possível concluir a operação neste momento. "
+            "Tente novamente em alguns instantes."
+        ),
+    }
+
+    return render(
+        request,
+        "pages/erro.html",
+        contexto,
+        status=500,
+    )

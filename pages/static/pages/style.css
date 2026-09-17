@@ -2072,6 +2072,66 @@ color: #1c3017;
 
 }
 
+/* PÁGINA DE ERRO */
+
+.pagina-erro {
+min-height: calc(100vh - 150px);
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 40px 16px;
+}
+
+.card-erro {
+width: 100%;
+max-width: 600px;
+padding: 40px 30px;
+background: #e8f5da;
+border: 2px double #686b51;
+border-radius: 10px;
+text-align: center;
+}
+
+.icone-erro {
+display: block;
+margin-bottom: 10px;
+font-size: 3rem;
+}
+
+.codigo-erro {
+display: block;
+color: #686b51;
+font-size: 1.2rem;
+font-weight: bold;
+}
+
+.card-erro h1 {
+margin: 10px 0;
+color: #686b51;
+}
+
+.card-erro p {
+margin-bottom: 25px;
+color: #686b51;
+}
+
+.acoes-erro {
+display: flex;
+justify-content: center;
+gap: 10px;
+flex-wrap: wrap;
+}
+
+.acoes-erro .botao {
+min-width: 180px;
+}
+
+
+
+
+
+
+
 
 /* =========================
    RESPONSIVIDADE
@@ -2312,4 +2372,20 @@ RODAPÉ
 padding: 10px;
 }
 }
+/* =====================
+Erro
+======================*/
+
+.card-erro {
+padding: 30px 20px;
+}
+
+.acoes-erro {
+    flex-direction: column;
+}
+
+.acoes-erro .botao {
+    width: 100%;
+}
+
 
