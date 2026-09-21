@@ -25,7 +25,10 @@ def index(request: HttpRequest) -> HttpResponse:
 @login_required
 def mensagens(request: HttpRequest) -> HttpResponse:
     if request.method == "POST":
-        form = MensagemForm(request.POST)
+        form = MensagemForm(
+            request.POST,
+            request.FILES,
+        )
 
         if form.is_valid():
             mensagem = form.save(commit=False)
@@ -165,7 +168,11 @@ def editar_recado(request, id):
     )
 
     if request.method == "POST":
-        form = MensagemForm(request.POST, instance=recado)
+        form = MensagemForm(
+            request.POST,
+            request.FILES,
+            instance=recado,
+        )
 
         if form.is_valid():
             form.save()

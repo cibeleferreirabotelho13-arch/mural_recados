@@ -16,17 +16,13 @@
 
         <span class="detalhes-recado-icone">📌</span>
 
-        <p>
-            <strong>Nome:</strong> {{ recado.nome }}
-        </p>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
 
-        <p>
-            <strong>Data:</strong> {{ recado.data }}
-        </p>
+            {{ form.as_p }}
 
-        <p>
-            <strong>Mensagem:</strong> {{ recado.mensagem }}
-        </p>
+   
+</form>
 
         <a href="{% url 'pages:editar_recado' recado.id %}">
             Editar

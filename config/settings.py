@@ -1,8 +1,9 @@
 import os
 from pathlib import Path
- 
+
+import cloudinary
 from dotenv import load_dotenv
- 
+
 # ============================================================
 # BASE
 # ============================================================
@@ -124,7 +125,10 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+
     "pages",
+    'cloudinary',
+    'cloudinary_storage',
 ]
  
  
@@ -197,7 +201,26 @@ DATABASES = {
         },
     }
 }
+
  
+ # ============================================================
+# CLOUDINARY
+# ============================================================
+
+CLOUDINARY_STORAGE = {
+    "CLOUD_NAME": get_env(
+        "CLOUDINARY_CLOUD_NAME",
+        required=True,
+    ),
+    "API_KEY": get_env(
+        "CLOUDINARY_API_KEY",
+        required=True,
+    ),
+    "API_SECRET": get_env(
+        "CLOUDINARY_API_SECRET",
+        required=True,
+    ),
+}
  
 # ============================================================
 # PASSWORD VALIDATION

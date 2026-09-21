@@ -57,7 +57,13 @@
                         <p class="texto-mensagem">
                             {{ mensagem.mensagem }}
                         </p>
-
+                        {% if recado.imagem %}
+                      <img
+                          src="{{ recado.imagem.url }}"
+                          alt="Imagem do recado"
+                           width="200"
+                       >
+                            {% endif %}
                     </div>
 
                 </article>

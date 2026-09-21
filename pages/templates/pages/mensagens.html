@@ -36,25 +36,6 @@
                     Confira as informações enviadas:
                 </p>
 
-                <div class="nome-mensagem">
-
-                    <div class="nome-item">
-                        <span>Nome</span>
-                        <strong>{{ mensagem.nome }}</strong>
-                    </div>
-
-                    <div class="data-item">
-                        <span>Data</span>
-                        <strong>{{ mensagem.data }}</strong>
-                    </div>
-
-                    <div class="mensagem-item">
-                        <span>Mensagem</span>
-                        <strong>{{ mensagem.mensagem }}</strong>
-                    </div>
-
-                </div>
-
                 <a
                     href="{% url 'pages:mensagens' %}"
                     class="botao botao-principal"
@@ -65,57 +46,60 @@
             </div>
 
         {% else %}
-        
-        <form method="post">
-            
-            {% csrf_token %}
-            
-            <div class="formulario">
-              <p>
-                  Preencha as informações abaixo.
-              </p>
-          </div>
-                
+
+            <form method="post" enctype="multipart/form-data">
+
+                {% csrf_token %}
+
+                <div class="formulario">
+                    <p>
+                        Preencha as informações abaixo.
+                    </p>
+                </div>
+
+                {% if form.errors %}
+                    <div class="erros-formulario">
+                        {{ form.errors }}
+                    </div>
+                {% endif %}
 
                 <div class="mensagens">
 
-                    <label for="nome">
+                    <label for="{{ form.nome.id_for_label }}">
                         Seu nome
                     </label>
 
-                    <input
-                        type="text"
-                        id="nome"
-                        name="nome"
-                    >
+                    {{ form.nome }}
 
                 </div>
 
                 <div class="mensagens">
 
-                    <label for="data">
+                    <label for="{{ form.data.id_for_label }}">
                         Data
                     </label>
 
-                    <input
-                        type="date"
-                        id="data"
-                        name="data"
-                    >
+                    {{ form.data }}
 
                 </div>
 
                 <div class="mensagens">
 
-                    <label for="mensagem">
+                    <label for="{{ form.mensagem.id_for_label }}">
                         Mensagem
                     </label>
 
-                    <input
-                        type="text"
-                        id="mensagem"
-                        name="mensagem"
-                    >
+                    {{ form.mensagem }}
+
+                </div>
+
+                <div class="mensagens">
+
+                    <label for="{{ form.imagem.id_for_label }}">
+                        Imagem (opcional)
+                    </label>
+
+                    {{ form.imagem }}
 
                 </div>
 
