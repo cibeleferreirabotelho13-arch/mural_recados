@@ -73,6 +73,5 @@ class MensagemForm(forms.ModelForm):
             )
 
        
-        
 
         return mensagem

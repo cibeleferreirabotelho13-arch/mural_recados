@@ -1,82 +1,86 @@
 {% extends 'pages/base.html' %}
 
 {% block title %}
-    Mensagens de usuários | Mural de Recados
+Mensagens de usuários | Mural de Recados
 {% endblock %}
 
 {% block content %}
 
 <div class="pagina-lista">
+<div class="container-pesquisa">
 
-    <div class="container-pesquisa">
+    <form method="get" action="{% url 'pages:lista' %}">
 
-        <form method="get" action="{% url 'pages:lista' %}">
-            <input
+        <input
             type="text"
             name="q"
             placeholder="Pesquisar mensagens..."
             value="{{ termo_busca }}"
-            >
-            
-            <button type="submit">
-                Pesquisar
-            </button>
-            
-            <span class="icone-pesquisa"> 🔎 </span>
+        >
 
-        </form>
+        <button type="submit">
+            Pesquisar
+        </button>
 
-    </div>
+        <span class="icone-pesquisa">
+            🔎
+        </span>
 
-    <h2 class="titulo-mensagens">
-        Recados de Usuarios
+    </form>
+
+</div>
+
+<h2 class="titulo-mensagens">
+    Recados de Usuários
+</h2>
+
+<section>
+
+    <h2>
+        Veja as mensagens dos usuários
     </h2>
 
-    <section>
+    <div class="nossas-mensagens">
 
-        <h2>
-            Veja as mensagens dos usuários
-        </h2>
+       {% for mensagem in mensagens %}
 
-        <div class="nossas-mensagens">
+    <article class="article-mensagem">
 
-            {% for mensagem in mensagens %}
+        {% if mensagem.imagem %}
+            <img
+                src="{{ mensagem.imagem.url }}"
+                alt="Imagem do recado"
+                class="imagem-mensagem"
+            >
+        {% endif %}
 
-                <article class="article-mensagem">
+        <div class="card-mensagem-conteudo">
 
-                    <div class="card-mensagem-conteudo">
-                    
-                        <span class="nome">
-                            {{ mensagem.nome }}
-                        </span>
+            <span class="nome">
+                {{ mensagem.nome }}
+            </span>
 
-                        <span class="data-mensagem">
-                            {{ mensagem.data }}
-                        </span>
+            <span class="data-mensagem">
+                {{ mensagem.data }}
+            </span>
 
-                        <p class="texto-mensagem">
-                            {{ mensagem.mensagem }}
-                        </p>
-                        {% if recado.imagem %}
-                      <img
-                          src="{{ recado.imagem.url }}"
-                          alt="Imagem do recado"
-                           width="200"
-                       >
-                            {% endif %}
-                    </div>
-
-                </article>
-
-            {% empty %}
-
-                <p>Nenhum recado encontrado.</p>
-
-            {% endfor %}
+            <p class="texto-mensagem">
+                {{ mensagem.mensagem }}
+            </p>
 
         </div>
 
-    </section>
+    </article>
+
+{% empty %}
+
+    <p>Nenhum recado encontrado.</p>
+
+{% endfor %}
+
+    </div>
+
+</section>
 
 </div>
 
